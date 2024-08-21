@@ -21,10 +21,9 @@
 .container {
   height: 45rem;
   width: 80%;
-  background-color: red;
+  background-color: white;
   display: flex;
-  justify-content: space-around;
-  padding: 1rem;
+  justify-content: space-evenly;
 }
 
 .input_text {
@@ -32,8 +31,68 @@
   width: 680px;
   height: 40%;
   font-size: 32px;
+  font-weight: 400;
+  font-family: "Inter";
 }
 
 .input_text::placeholder {
+  color: #0a3871;
+}
+
+.criptoText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.criptoText h1 {
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28.8px;
+  text-align: center;
+  color: #343a40;
+}
+
+.criptoText h2 {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  color: #495057;
+}
+
+.alertText {
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: left;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 1rem;
+}
+
+.button {
+  width: 10rem;
+  height: 3rem;
+  font-weight: 400;
+  gap: 8px;
+  border-radius: 2rem;
+  opacity: 0px;
+}
+
+.Criptografar {
+  background-color: #0a3871;
+  color: white;
+  border: none;
+}
+
+.Descriptografar {
+  border-color: #0a3871;
   color: #0a3871;
 }
