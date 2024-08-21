@@ -1,0 +1,39 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar {
+  height: 5rem;
+  width: 100%;
+  justify-content: first baseline;
+  align-items: center;
+  display: flex;
+}
+
+.container {
+  height: 45rem;
+  width: 80%;
+  background-color: red;
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+}
+
+.input_text {
+  border: none;
+  width: 680px;
+  height: 40%;
+  font-size: 32px;
+}
+
+.input_text::placeholder {
+  color: #0a3871;
+}
