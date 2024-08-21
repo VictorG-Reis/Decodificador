@@ -1,5 +1,3 @@
-
-
 // As "chaves" de criptografia que utilizaremos são:
 // A letra "e" é convertida para "enter"
 // A letra "i" é convertida para "imes"
@@ -21,4 +19,38 @@
 // - Um botão que copie o texto criptografado/descriptografado para a área de transferência - ou seja, que tenha a mesma funcionalidade do ctrl+C ou da opção "copiar" do menu dos aplicativos.
 
 
+
+let textInput;
+
+
+function getText() {
+  let textInput = document.getElementById('textInput').value
+  //poderia usar um regex ou switch case mas quero deixar o mais simples possivel, feio? talvez. mas simples
+  let newText = '';
+    for (let i = 0; i < textInput.length; i++) {
+      if(textInput[i] === 'a') {
+      newText +=  'ai'
+  
+    } else if(textInput[i] == 'e') {
+      newText +='enter'
+
+    } else if(textInput[i] == 'i') {
+      newText += 'imes'
+      
+    } else if(textInput[i] == 'o') {
+      newText += 'ober'
+
+    } else if(textInput[i] == 'u') {
+      newText +='ufat'
+    }
+    else {
+      newText += textInput[i]
+    }
+  }
+  console.log(newText)
+}
+
+let buttonAction = document.getElementById('CriptografarBnt')
+buttonAction.addEventListener('click', getText)
+console.log(textInput)
 
