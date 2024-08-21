@@ -3,6 +3,10 @@
   margin: 0;
 }
 
+:root {
+  --main-text-color: #0a3871;
+}
+
 .main {
   display: flex;
   flex-direction: column;
@@ -19,6 +23,7 @@
 }
 
 .container {
+  margin-top: 2rem;
   height: 45rem;
   width: 80%;
   background-color: white;
@@ -29,14 +34,27 @@
 .input_text {
   border: none;
   width: 680px;
-  height: 40%;
+  height: 90%;
   font-size: 32px;
   font-weight: 400;
   font-family: "Inter";
+  resize: none;
+  color: var(--main-text-color);
 }
 
 .input_text::placeholder {
-  color: #0a3871;
+  color: var(--main-text-color);
+}
+
+.input_text:focus {
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
+}
+textarea:focus {
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
 }
 
 .criptoText {
@@ -87,12 +105,12 @@
 }
 
 .Criptografar {
-  background-color: #0a3871;
+  background-color: var(--main-text-color);
   color: white;
   border: none;
 }
 
 .Descriptografar {
-  border-color: #0a3871;
-  color: #0a3871;
+  border-color: var(--main-text-color);
+  color: var(--main-text-color);
 }
