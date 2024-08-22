@@ -20,11 +20,17 @@
 
 
 
-let textInput;
+let buttonAction = document.getElementById('CriptografarBnt')
+buttonAction.addEventListener('click', criptografarText)
 
 
-function getText() {
+let DescriptografarBnt = document.getElementById("DescriptografarBnt")
+DescriptografarBnt.addEventListener('click', descriptografarText)
+
+
+function criptografarText() {
   let textInput = document.getElementById('textInput').value
+
   //poderia usar um regex ou switch case mas quero deixar o mais simples possivel, feio? talvez. mas simples
   let newText = '';
     for (let i = 0; i < textInput.length; i++) {
@@ -47,10 +53,42 @@ function getText() {
       newText += textInput[i]
     }
   }
+
+  document.querySelector('.criptoText').innerHTML = newText
+}
+
+
+  function descriptografarText() {
+  
+  let textInput = document.getElementById('textInput').value
+
+  let newText = '';
+    for (let i = 0; i < textInput.length; i++) {
+      if(textInput[i] == 'ai') {
+      newText += 'a'
+  
+    } else if(textInput[i] == 'enter') {
+      newText += 'e'
+
+    } else if(textInput[i] == 'imes') {
+      newText += 'i'
+      
+    } else if(textInput[i] == 'ober') {
+      newText += 'o'
+
+    } else if(textInput[i] == 'ufat') {
+      newText +='u'
+    }
+    else {
+      newText += textInput[i]
+    }
+  }
+
+  document.querySelector('.criptoText').innerHTML = newText
+
   console.log(newText)
 }
 
-let buttonAction = document.getElementById('CriptografarBnt')
-buttonAction.addEventListener('click', getText)
-console.log(textInput)
+
+
 
