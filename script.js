@@ -54,7 +54,13 @@ function criptografarText() {
     }
   }
 
-  document.querySelector('.criptoText').innerHTML = newText
+  document.querySelector('.texto').innerHTML = newText
+
+  document.querySelector('#img').style.display= 'none'
+  document.querySelector('#subtitle').style.display= 'none'
+
+  document.querySelector('.texto').style.whiteSpace = 'pre-wrap';
+  
 }
 
 
@@ -62,33 +68,49 @@ function criptografarText() {
   
   let textInput = document.getElementById('textInput').value
 
+  let i = 0;
   let newText = '';
-    for (let i = 0; i < textInput.length; i++) {
-      if(textInput[i] == 'ai') {
-      newText += 'a'
-  
-    } else if(textInput[i] == 'enter') {
-      newText += 'e'
-
-    } else if(textInput[i] == 'imes') {
-      newText += 'i'
-      
-    } else if(textInput[i] == 'ober') {
-      newText += 'o'
-
-    } else if(textInput[i] == 'ufat') {
-      newText +='u'
-    }
-    else {
-      newText += textInput[i]
+  while (i < textInput.length) {
+    if (textInput.startsWith('ai', i)) {
+      newText += 'a';
+      i += 2; 
+    } else if (textInput.startsWith('enter', i)) {
+      newText += 'e';
+      i += 5; 
+    } else if (textInput.startsWith('imes', i)) {
+      newText += 'i';
+      i += 4; 
+    } else if (textInput.startsWith('ober', i)) {
+      newText += 'o';
+      i += 4; 
+    } else if (textInput.startsWith('ufat', i)) {
+      newText += 'u';
+      i += 4; 
+    } else {
+      newText += textInput[i];
+      i++; 
     }
   }
-
-  document.querySelector('.criptoText').innerHTML = newText
+  document.querySelector('.texto').innerHTML = newText
+  document.querySelector('#img').style.display= 'none'
+  document.querySelector('#subtitle').style.display= 'none'
+  document.querySelector('.texto').style.whiteSpace = 'pre-wrap';
+  
+  
 
   console.log(newText)
 }
 
+
+document.getElementById('clipboard')
+.addEventListener('click', execCopy)
+
+async function execCopy() {
+  document.querySelector(".texto").select();
+  document.execCommand("copy");
+  let text = document.querySelector('.texto').value
+  await navigator.clipboard.writeText(text)
+}
 
 
 
