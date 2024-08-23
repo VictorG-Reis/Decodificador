@@ -64,11 +64,12 @@ textarea:focus {
   flex-direction: column;
   flex-wrap: wrap;
   width: 40rem;
-  height: auto; 
+  height: auto;
   padding: 1rem;
-  overflow-y: auto; 
-  overflow-wrap: break-word; 
-  word-break: break-all; /
+  overflow-y: auto;
+  overflow-wrap: break-word;
+  word-break: break-all;
+  margin-top: 2rem;
 }
 
 .criptoText h1 {
@@ -110,7 +111,7 @@ textarea:focus {
   height: 3rem;
   font-weight: 400;
   gap: 8px;
-  border-radius: 2rem;
+  border-radius: 1.3rem;
   opacity: 0px;
 }
 
@@ -125,3 +126,63 @@ textarea:focus {
   color: var(--main-text-color);
 }
 
+/* Media query para telas com largura máxima de 700px */
+@media (max-width: 760px) {
+  .container {
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .criptoText img {
+    display: none;
+  }
+
+  .input_text {
+    width: 38rem;
+  }
+
+  .buttonContainer {
+    justify-content: space-between;
+  }
+  .button {
+    width: 50%;
+  }
+
+  #clipboard {
+    display: none;
+  }
+}
+
+/* Media query para telas com largura máxima de 375px */
+@media (max-width: 600px) {
+  .input_text {
+    width: 20rem;
+    height: 70%;
+  }
+
+  .criptoText {
+    width: 20rem;
+  }
+
+  .criptoText h1 {
+    font-size: 1.7rem;
+    font-weight: 700;
+  }
+
+  .criptoText h2 {
+    font-size: 0.9rem;
+  }
+
+  .buttonContainer {
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+  }
+  .button {
+    width: 100%;
+    height: 3rem;
+  }
+}
