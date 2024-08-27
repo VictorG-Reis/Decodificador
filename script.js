@@ -98,18 +98,25 @@ function criptografarText() {
   
   
 
-  console.log(newText)
 }
 
 
-document.getElementById('clipboard')
+const bntCopy =document.getElementById('clipboard')
 .addEventListener('click', execCopy)
 
-async function execCopy() {
-  document.querySelector(".texto").select();
-  document.execCommand("copy");
-  let text = document.querySelector('.texto').value
-  await navigator.clipboard.writeText(text)
+
+  function execCopy() {
+    var r = document.createRange();
+    r.selectNode(document.getElementById('texto'));
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(r);
+
+    try {
+        document.execCommand('copy');
+        window.getSelection().removeAllRanges();
+    } catch (err) {
+    console.log('Não foi possível copiar!');
+  }
 }
 
 

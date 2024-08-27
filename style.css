@@ -126,7 +126,6 @@ textarea:focus {
   color: var(--main-text-color);
 }
 
-/* Media query para telas com largura máxima de 700px */
 @media (max-width: 760px) {
   .container {
     flex-direction: column;
@@ -155,7 +154,6 @@ textarea:focus {
   }
 }
 
-/* Media query para telas com largura máxima de 375px */
 @media (max-width: 600px) {
   .input_text {
     width: 20rem;
